@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    respond_with Post. create(post_params)
+    respond_with Post.create(post_params)
   end
 
   def show
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:link, :title)
+    params.require(:post).permit(:title, :link)
   end
 
 

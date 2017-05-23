@@ -3,7 +3,6 @@ angular.module('flapperNews', ['ui.router', 'templates'])
   '$stateProvider',
   '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider) {
-
     $stateProvider
       .state('home', {
         url: '/home',
