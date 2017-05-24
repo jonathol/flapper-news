@@ -10,8 +10,12 @@ angular.module('flapperNews')
   };
   o.create = function(post) {
     return $http.post('/posts.json', post).then(function(data){
-      
       o.posts.push(data.data);
+    });
+  };
+  o.upvote = function(post) {
+    return $http.put('/posts/' + post.id + '/upvote.json').then(function(data){
+      post.upvotes += 1;
     });
   };
   return o;
