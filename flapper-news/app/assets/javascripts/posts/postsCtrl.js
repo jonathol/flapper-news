@@ -10,12 +10,12 @@ angular.module('flapperNews')
       posts.addComment(post.id, {
         body: $scope.body,
         author: 'user',
-      }).then(function(comment) {      
+      }).then(function(comment) {
         $scope.post.comments.push(comment.data);
       });
       $scope.body = '';
     };
-    $scope.incrementUpvotes = function(comment) {
-      comment.upvotes += 1;
+    $scope.incrementUpvotes = function(comment){
+      posts.upvoteComment(post, comment);
     };
 }]);

@@ -23,8 +23,14 @@ angular.module('flapperNews')
       return res.data;
     });
   };
-  o.addComment = function(id, comment) {    
+  o.addComment = function(id, comment) {
     return $http.post('/posts/' + id + '/comments.json', comment);
+  };
+  o.upvoteComment = function(post, comment) {
+    return $http.put('/posts/' + post.id + '/comments/'+ comment.id + '/upvote.json')
+      .then(function(data){
+        comment.upvotes += 1;
+      });
   };
   return o;
 }])
