@@ -1,4 +1,4 @@
-angular.module('flappernews')
+angular.module('flapperNews')
   .controller('NavCtrl', [
     '$scope',
     'Auth',
@@ -6,6 +6,7 @@ angular.module('flappernews')
       $scope.signedIn = Auth.isAuthenticated;
       $scope.logout = Auth.logout;
       Auth.currentUser().then(function (user){
+        debugger
         $scope.user = user;
       });
       $scope.$on('devise:new-registration', function (e, user){
